@@ -3,6 +3,7 @@ import * as fs from 'fs';
 import * as util from 'util';
 import { DbType } from '@oe-zext/types';
 
+let _instance: Controller;
 
 /**
  * Controls database definition data
@@ -17,11 +18,17 @@ export class Controller {
     private watcher: vscode.FileSystemWatcher;
     private dbfCollection: DbType.DbFile[] = [];
 
-    constructor(namePattern:string, nameRegexp:RegExp) {
-        this.dbfNamePattern = namePattern;
-        this.dbfNameRegexp = nameRegexp;
-        this.startWatcher();
-        process.nextTick(() => this.initDbFiles());
+    static getInstance(): Controller {
+        return _instance;
+    }
+
+    static attach(namePattern:string, nameRegexp:RegExp): Controller {
+        _instance = new Controller();
+        _instance.dbfNamePattern = namePattern;
+        _instance.dbfNameRegexp = nameRegexp;
+        _instance.startWatcher();
+        process.nextTick(() => _instance.initDbFiles());
+        return _instance;
     }
 
     dispose() {
