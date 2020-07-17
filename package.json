@@ -1,0 +1,33 @@
+{
+  "name": "@oe-zext/database",
+  "version": "1.0.0",
+  "description": "Database reference library for OpenEdge-ZExt",
+  "main": "out/index.js",
+  "types": "out/index.d.ts",
+  "scripts": {
+    "compile": "tsc",
+    "build": "npm run compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ezequielgandolfi/openedge-zext-database.git"
+  },
+  "author": "Ezequiel Gandolfi",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ezequielgandolfi/openedge-zext-database/issues"
+  },
+  "homepage": "https://github.com/ezequielgandolfi/openedge-zext-database#readme",
+  "files": [
+    "out/**/*"
+  ],
+  "dependencies": {
+    "@oe-zext/types": "~1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "14.0.14",
+    "@types/vscode": "1.46.0",
+    "eslint": "7.3.1",
+    "typescript": "3.9.5"
+  }
+}
