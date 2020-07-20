@@ -1,6 +1,6 @@
 {
   "name": "@oe-zext/database",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Database reference library for OpenEdge-ZExt",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -22,7 +22,7 @@
     "lib/**/*"
   ],
   "dependencies": {
-    "@oe-zext/types": "~1.0.0"
+    "@oe-zext/types": "~1.0.2"
   },
   "devDependencies": {
     "@types/node": "14.0.14",
